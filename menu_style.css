@@ -1,0 +1,84 @@
+
+*{
+  margin: 0px;
+  padding: 0px;
+}
+.menu {
+    padding: 90px 0;
+    height: 75vh;
+    text-align: center;
+    background-color: #070e16;
+  }
+  
+  .menu h2 {
+    font-size: 36px;
+    margin-bottom: 40px;
+    color: #ffffff;
+  }
+  
+  .menu-items {
+    display: flex;
+    justify-content: space-between;
+    justify-content: center;
+  }
+  
+  .menu-item {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    max-width: 300px;
+    margin: 0 20px;
+    text-align: left;
+  }
+  
+  .menu-item img {
+    width: 20vw;
+    height: 30vh;
+    border-radius: 5px;
+    margin-bottom: 16px;
+  }
+  
+  .menu-item h3 {
+    font-size: 24px;
+    margin-bottom: 10px;
+    color: #ffffff;
+  }
+  
+  .menu-item p {
+    font-size: 16px;
+    margin-bottom: 20px;
+    color: #ffffff;
+  }
+  .btn {
+    width: 25%;
+    display: inline-block;
+    background-color: #ff0000;
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+  }
+  
+  .btn:hover {
+    background-color: #e60000;
+  }
+  label[for="t"] {
+    font-weight: bold;
+    margin-right: 5px;
+    color: #ccc;
+  }
+  
+  input.total {
+    width: 50px; /* Adjust width as needed */
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    background-color: #f9f9f9;
+    color: #333;
+    font-size: 14px;
+    text-align: center;
+    box-sizing: border-box;
+  }
+  
