@@ -2,20 +2,30 @@ pipeline {
     agent any
 
     stages {
+        stage('Checkout SCM') {
+            steps {
+                git 'https://github.com/AamirHussainoo7/Hussain.git'
+            }
+        }
         stage('Build') {
             steps {
-                sh 'npm install'
-                sh 'gulp build'
+                nodejs(nodeJSInstallationName: 'NodeJS 14.17.0') {
+                    sh 'npm install'
+                }
             }
         }
         stage('Test') {
             steps {
-                sh 'gulp test'
+                nodejs(nodeJSInstallationName: 'NodeJS 14.17.0') {
+                    sh 'npm run test'
+                }
             }
         }
         stage('Deploy') {
             steps {
-                sh 'gulp deploy'
+                nodejs(nodeJSInstallationName: 'NodeJS 14.17.0') {
+                    sh 'npm run deploy'
+                }
             }
         }
     }
