@@ -2,45 +2,21 @@ pipeline {
     agent any
 
     stages {
-        stage('Checkout') {
-            steps {
-                // Clone the repo
-                git 'https://github.com/AamirHussainoo7/Hussain.git'
-            }
-        }
-
-        stage('Validate HTML/CSS') {
-            steps {
-                echo 'Validating HTML and CSS...'
-                // Optional: Add HTML/CSS linters if needed
-                // For example, using htmlhint or stylelint if available
-                // sh 'htmlhint .'
-                // sh 'stylelint "**/*.css"'
-            }
-        }
-
         stage('Build') {
             steps {
-                echo 'Nothing to build for static HTML/CSS'
+                sh 'npm install'
+                sh 'gulp build'
             }
         }
-
+        stage('Test') {
+            steps {
+                sh 'gulp test'
+            }
+        }
         stage('Deploy') {
             steps {
-                echo 'Deploying files...'
-                // Copy files to web server directory
-                // For example:
-                // sh 'cp -r * /var/www/html/'
+                sh 'gulp deploy'
             }
-        }
-    }
-
-    post {
-        success {
-            echo 'Deployment successful!'
-        }
-        failure {
-            echo 'Build failed.'
         }
     }
 }
