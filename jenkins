@@ -4,7 +4,8 @@ pipeline {
     stages {
         stage('Checkout SCM') {
             steps {
-                git 'https://github.com/AamirHussainoo7/Hussain.git'
+                git branch: 'main',
+                url: 'https://github.com/AamirHussainoo7/Hussain.git'
             }
         }
         stage('Build') {
